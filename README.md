@@ -1,1 +1,4 @@
-# vue_practices
+# Vue.jsのスキルアップを目的とした練習用コード置き場です。
+## アプリ一覧
+1. increment_counters - カウンターのリストを表示し、それぞれクリックすることで+1カウントされる。
+1. review_timing_suggestor - n回目の復習を、何日目に行えば良いかサジェストしてくれる。
