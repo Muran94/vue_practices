@@ -1,16 +1,8 @@
 <template>
   <div class="colors">
-    <ColorForm :initSaturation="colorData.saturation" :initLightness="colorData.lightness" @emitUp="updateColorData"/>
+    <ColorForm :initSaturation="colorSetting.saturation" :initLightness="colorSetting.lightness" @emitUp="updateColorSetting"/>
 
-
-    <ColorItem name="Blue"   hue="216" :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Purple" hue="261" :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Pink"   hue="330" :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Red"    hue="354"   :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Orange" hue="27"  :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Yellow" hue="45"  :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Green"  hue="152" :saturation="colorData.saturation" :lightness="colorData.lightness"/>
-    <ColorItem name="Cyan"   hue="190" :saturation="colorData.saturation" :lightness="colorData.lightness"/>
+    <ColorItem v-for="(colorData, colorKey) in colors" :key="colorKey" :name="colorData.name" :hue="colorData.hue" :saturation="colorSetting.saturation" :lightness="colorSetting.lightness"/>
   </div>
 </template>
 
@@ -25,15 +17,25 @@
     },
     data() {
       return {
-        colorData: {
+        colorSetting: {
           saturation: "80",
           lightness: "60",
+        },
+        colors: {
+          blue:   { name: "Blue",   hue: "216" },
+          purple: { name: "Purple", hue: "261" },
+          pink:   { name: "Pink",   hue: "330" },
+          red:    { name: "Red",    hue: "354" },
+          orange: { name: "Orange", hue:  "27" },
+          yellow: { name: "Yellow", hue:  "45" },
+          greeen: { name: "Green",  hue: "152" },
+          Cyan:   { name: "Cyan",   hue: "190" },
         }
       }
     },
     methods: {
-      updateColorData(payload) {
-        this.colorData = payload;
+      updateColorSetting(payload) {
+        this.colorSetting = payload;
       }
     }
   }
