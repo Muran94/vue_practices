@@ -15,12 +15,14 @@
       </div>
 
       <div v-if="playStatus == 'answering'" class="text-align-center">
-        <input type="text" v-model="answeredNumber"/>
+        <input type="text" v-model="answeredNumbers"/>
         <button @click="answer">ANSWER</button>
       </div>
 
       <div v-if="playStatus == 'showing_results'" class="text-align-center">
         Here are the results.
+        <div>{{ generatedNumbers }}</div>
+        <div>{{ answeredNumbers }}</div>
       </div>
     </div>
   </div>
@@ -32,6 +34,7 @@
   export default {
     data() {
       return {
+        answeredNumbers: '',
         countDownSecond: 3,
         remainingSeconds: 0,
       }
@@ -73,7 +76,7 @@
       this.countDown();
     },
     computed: {
-      ...mapState(['seconds', 'playStatus', 'generatedNumbers', 'answeredNumber'])
+      ...mapState(['seconds', 'playStatus', 'generatedNumbers'])
     }
   }
 </script>

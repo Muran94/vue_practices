@@ -9,7 +9,7 @@ export default new Vuex.Store({
     digits: 10,
     seconds: 1,
     generatedNumbers: null,
-    answeredNumber: null,
+    answeredNumbers: null,
   },
   getters: {
   },
@@ -18,6 +18,9 @@ export default new Vuex.Store({
       state.generatedNumbers = new Array(10).fill(null).map(() => {
         return Math.floor(Math.random() * 10);
       }).join("");
+    },
+    saveAnsweredNumbers(state, answeredNumbers) {
+      state.answeredNumbers = answeredNumbers;
     },
     startCountDown(state) {
       state.playStatus = 'count_down';
