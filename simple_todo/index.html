@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple TODO</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="app" class="page">
+    <todo-list :todos="todos" @todo-checked="checkTodo"></todo-list>
+    <todo-form @todo-submitted="addTodo"></todo-form>
+  </div>
+
+  <!-- Import App -->
+  <script src="./main.js"></script>
+
+  <!-- Import Components -->
+  <script src="./components/TodoList.js"></script>
+  <script src="./components/TodoForm.js"></script>
+
+  <!-- Mount App -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+</html>

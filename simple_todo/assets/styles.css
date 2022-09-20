@@ -1,0 +1,161 @@
+* {
+  /* Box */
+  box-sizing: border-box;
+}
+
+body {
+  /* Color */
+  color: #555;
+
+  /* Font & Text */
+  font-size: 15px;
+
+  /* Spacing */
+  margin: 0;
+}
+
+.page {
+  /* Color */
+  background: #f5f5f5;
+
+  /* Flexbox */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  /* Sizing */
+  height: 100vh;
+  width: 100vw;
+}
+
+.panel {
+  /* Border */
+  border-radius: 3px;
+
+  /* Color */
+  background: white;
+
+  /* Sizing */
+  width: 500px;
+
+  /* Spacing */
+  margin-top: 50px;
+  padding: 25px;
+
+}
+
+.todo-list {
+  /* Spacing */
+  padding: 0;
+}
+
+.todo-item {
+  /* Flexbox */
+  align-items: center;
+  display: flex;
+  gap: 10px;
+
+  /* Interface */
+  cursor: pointer;
+  user-select: none;
+
+  /* Spacing */
+  padding: 25px;
+}
+
+.todo-item + .todo-item {
+  /* Border */
+  border-top: 1px solid #ddd;
+}
+
+.todo-checkbox {
+  /* Border */
+  border: 1px solid #aaa;
+  border-radius: 3px;
+
+  /* Position */
+  position: relative;
+
+  /* Sizing */
+  height: 20px;
+  width: 20px;
+}
+
+.todo-item--checked > .todo-checkbox::after {
+  content : '';
+
+  /* Border */
+  border-left: 3px solid turquoise;
+  border-bottom: 3px solid turquoise;
+  border-radius: 1px;
+
+  /* Position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%) rotate(-45deg);
+
+  /* Sizing */
+  height: 5px;
+  width: 10px;
+}
+
+.todo-name {
+  /* Font & Text */
+  line-height: 1;
+}
+
+.form-field {
+  /* Flexbox */
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-field + .form-field {
+  /* Spacing */
+  margin-top: 10px;
+}
+
+.form-label {
+  /* Color */
+  color: #777;
+
+  /* Font & Text */
+  font-size: 15px;
+}
+
+.form-input {
+  /* Border */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+
+  /* Font & Text */
+  line-height: 1;
+
+  /* Sizing */
+  width: 100%;
+
+  /* Spacing */
+  padding: 10px;
+}
+
+.form-button {
+  /* Border */
+  border-radius: 3px;
+
+  /* Color */
+  background: turquoise;
+  color: white;
+
+  /* Font & Text */
+  line-height: 1;
+
+  /* Interface */
+  cursor: pointer;
+  user-select: none;
+
+  /* Spacing */
+  padding: 15px;
+}
